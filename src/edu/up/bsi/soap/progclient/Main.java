@@ -1,5 +1,6 @@
 package edu.up.bsi.soap.progclient;
 
+import java.util.List;
 import java.util.Scanner;
 
 import edu.up.bsi.soap.progserver.ProgressaoCalc;
@@ -10,24 +11,53 @@ public class Main {
 	public static ProgressaoCalc progressao;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		Scanner sc = new Scanner(System.in);
 		progressao = new ProgressaoCalcService().getProgressaoCalcPort();
 
-		int qtdNumero = 10;
-		int razao = 5;
-		int vPa = 0;
+		int option = 0;
 
-		int d = 0;
+		Scanner sc = new Scanner(System.in);
 
-		int[] tamanhoVetor = new int[qtdNumero];
+		while (option != 6) {
 
-		tamanhoVetor = progressao.progressArit(qtdNumero, razao, vPa);
-		System.out.println("boa");
+			System.out.println("PROGRESSÃO ARITMÉTICA:");
+			System.out.println("1 - PA:");
+			System.out.println("2 - SAIR:");
+			option = sc.nextInt();
 
-		for (int i = 0; i < tamanhoVetor.length; i++) {
-			System.out.println(tamanhoVetor[i]);
+			switch (option) {
+			case 1:
+				System.out.println("Opção 1 selecionada.");
+				option = 1;
+
+				System.out.println("Opção 1");
+				int qtdNumero = 10;
+				int razao = 5;
+				int vPa = 0;
+
+				int d = 0;
+
+				int[] tamanhoVetor = new int[qtdNumero];
+
+				tamanhoVetor = progressao.progressArit(qtdNumero, razao, vPa);
+				System.out.println("boa");
+
+				for (int i = 0; i < tamanhoVetor.length; i++) {
+					System.out.println(tamanhoVetor[i]);
+				}
+
+				break;
+
+			case 2:
+				System.out.println("Opção 2 selecionada.");
+				option = 6;
+				System.out.println("Upload Com sucesso!");
+
+				break;
+
+			default:
+				break;
+			}
 		}
 
 	}

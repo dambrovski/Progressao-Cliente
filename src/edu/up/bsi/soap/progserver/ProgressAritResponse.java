@@ -1,8 +1,8 @@
 
 package edu.up.bsi.soap.progserver;
 
-import java.util.ArrayList;
-import java.util.List;
+
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class ProgressAritResponse {
 
     @XmlElement(name = "return", nillable = true)
-    protected List<Integer> _return;
+    protected int[] _return;
 
     /**
      * Gets the value of the return property.
@@ -59,9 +59,9 @@ public class ProgressAritResponse {
      * 
      * 
      */
-    public List<Integer> getReturn() {
+    public int[] getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Integer>();
+            _return = new int[10];
         }
         return this._return;
     }
